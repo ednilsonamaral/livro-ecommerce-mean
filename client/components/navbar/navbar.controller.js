@@ -2,10 +2,16 @@
 
 angular.module('meanshopApp')
   .controller('NavbarCtrl', function ($scope, Auth) {
-    $scope.menu = [{
-      'title': 'Home',
-      'state': 'main'
-    }];
+    $scope.menu = [
+      {
+        'title': 'Home',
+        'state': 'main'
+      },
+      {
+        'title': 'Products',
+        'state': 'products'
+      }
+    ];
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
