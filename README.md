@@ -282,3 +282,6 @@ O REST é uma interface uniforme, não orientada a eventos. Baseia-se no protoco
 É um servidor web composto principalmente de rotas, middlewares e views. No MEANSHOP será usado apenas as rotas e middlewares, as views ficam com o AngularJS.
 
 O middleware é uma função que possui 3 parâmetros: `request`, `response` e `next`. Diferente das rotas que não possui `next`.
+
+
+#### Testes, TDD, BDD
