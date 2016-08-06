@@ -1,4 +1,4 @@
-// Generated on 2016-08-05 using generator-angular-fullstack 3.0.0-rc4
+// Generated on 2015-08-21 using generator-angular-fullstack 3.0.0-rc4
 'use strict';
 
 module.exports = function (grunt) {
@@ -652,6 +652,31 @@ module.exports = function (grunt) {
     grunt.task.run(['serve']);
   });
 
+  grunt.registerTask('db', function (target) {
+    if(target === 'clean'){
+      var done = this.async();
+      var config = require('./server/config/environment');
+      var mongoose = require('mongoose');
+
+      mongoose.connect(config.mongo.uri, config.mongo.options, function(err){
+        if(err) {
+          done(err);
+        } else {
+          mongoose.connection.db.dropDatabase(function (err) {
+            if(err) {
+              console.log('Connected to ' + config.mongo.uri);
+              done(err);
+            } else {
+              console.log('Dropped ' + config.mongo.uri);
+              done();
+            }
+          });
+        }
+      });
+    }
+  });
+
+
   grunt.registerTask('test', function(target, option) {
     if (target === 'server') {
       return grunt.task.run([
@@ -692,6 +717,7 @@ module.exports = function (grunt) {
           'clean:server',
           'env:all',
           'env:test',
+          'db:clean',
           'injector:sass',
           'concurrent:test',
           'injector',

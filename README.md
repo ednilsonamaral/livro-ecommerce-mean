@@ -321,3 +321,19 @@ Não é uma tarefa das mais simples. Não podemos apenas vincular o arquivo a um
 ##### No NodeJS
 
 Quando o app envia uma solicitação POST com uma imagem, é preciso adicionar no backend um código para que o servidor saiba o que fazer. Para isso, usaremos a dependência `connect-multiparty`.
+
+
+##### Testando APIs RESTful no AngularJS
+
+* Karma e Mocha/Chai/SinonJS para testes de unidade;  
+* Protractor para testes e2e (fim a fim).
+
+
+###### `ngMock`
+
+É um módulo nativo do AngularJS que injeta variáveis em testes e falsos serviços do AngularJS. Como:  
+
+* `$httpBackend`: falso backend HTTP
+
+
+### Capítulo 6 - Autenticação e Autorização
