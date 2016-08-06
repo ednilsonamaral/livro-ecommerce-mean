@@ -285,3 +285,22 @@ O middleware é uma função que possui 3 parâmetros: `request`, `response` e `
 
 
 #### Testes, TDD, BDD
+
+##### TDD
+
+**Test Driven Development** ou **Desenvolvimento Guiado por Testes**  
+
+Cada recurso é implementado duplamente, no código de produção e no código de testes. Isso vai nos ajudar e detectar erros mais rápido e reduzir o tempo de depuração.
+
+
+##### BDD
+
+**Behavior Driven Development** ou **Desenvolvimento Guiado por Comportamento**  
+
+É construído sobre o TDD. Normalmente os testes são chamados de *specs* (especificações).  
+
+Muitos dos testes em estilo BDD estão agrupados nos blocos `describe`. Dentro desses blocos estão os blocos `it`. Eles são funções JS que pedem dois parâmetros, string de texto e callback. A string de texto é a expressão (descrição) do teste em si e o callback é o teste em si.  
+
+Algumas funções de callback chama o parâmetro `done`. A função `done()` ajuda a testar funções async.
+
+O bloco de `beforeEach` é executado antes do `it`. Serve para testar cada bloco de forma isolada.
