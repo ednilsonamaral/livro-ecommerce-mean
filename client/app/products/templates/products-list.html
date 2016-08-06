@@ -12,7 +12,7 @@
   <div class="row">
     <div class="col-sm-6 com-md-4" ng-repeat="product in products">
       <div class="thumbnail">
-        <img src="http://placehold.it/300x200" alt="{{ product.title }}">
+        <img src="{{product.imageUrl}}" alt="{{product.title}}">
 
         <div class="caption">
           <h3>{{ product.title }}</h3>

@@ -304,3 +304,20 @@ Muitos dos testes em estilo BDD estão agrupados nos blocos `describe`. Dentro d
 Algumas funções de callback chama o parâmetro `done`. A função `done()` ajuda a testar funções async.
 
 O bloco de `beforeEach` é executado antes do `it`. Serve para testar cada bloco de forma isolada.
+
+
+### Capítulo 5 - Conectando o AngularJS à API REST do ExpressJS
+
+O `ngResource` é um serviço do AngularJS que serve para conexão à APIs do tipo RESTful.
+
+
+#### Upload de imagens
+
+##### No AngularJS
+
+Não é uma tarefa das mais simples. Não podemos apenas vincular o arquivo a uma tag de nome de arquivo no HTML e esperar que isso vai funcionar. Utilizar as bibliotecas `ng-file-upload` e `ng-file-upload-shim`, instalando-as com Bower.
+
+
+##### No NodeJS
+
+Quando o app envia uma solicitação POST com uma imagem, é preciso adicionar no backend um código para que o servidor saiba o que fazer. Para isso, usaremos a dependência `connect-multiparty`.

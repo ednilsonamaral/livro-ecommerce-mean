@@ -3,32 +3,50 @@
   <p>{{errors}}</p>
 </div>
 
-<div class="form-group">
-  <label for="title" class="col-sm-2 control-label">Title</label>
+<div class="row">
+  <div class="col-md-12">
+    <div class="drop-box" ngf-select="upload($file)" ngf-multiple="true" ngf-pattern="'image/*'" ngf-max-size="15MB" accept="image/*">
+      Drop Images here or click to upload
+    </div>
 
-  <div class="col-sm-10">
-    <input type="text" ng-model="product.title" class="form-control" id="title" placeholder="product title">
+    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser.</div>
+
+    <button class="btn btn-primary" accpet="image/*" ngf-max-size="15MB" type="file" ngf-select="upload($file)">Upload on file select</button>
+
+    <h2 ng-show="file">Preview</h2>
+    <img ngf-src="file" width="170px">
+    <div ng-show="file">{{ file.name }} {{ file.$error }} {{ file.$erroParam}}</div>
   </div>
-</div>
 
-<div class="form-group">
-  <label for="description" class="control-label col-sm-2">Description</label>
+  <div class="col-md-12">
+    <div class="form-group">
+      <label for="title" class="col-sm-2 control-label">Title</label>
 
-  <div class="col-sm-10">
-    <input type="text" class="form-control" id="description" ng-model="product.description" placeholder="Describe your product....">
-  </div>
-</div>
+      <div class="col-sm-10">
+        <input type="text" ng-model="product.title" class="form-control" id="title" placeholder="product title">
+      </div>
+    </div>
 
-<div class="form-group">
-  <label for="price" class="col-sm-2 control-label">Price</label>
+    <div class="form-group">
+      <label for="description" class="control-label col-sm-2">Description</label>
 
-  <div class="col-sm-10">
-    <input type="text" class="form-control" id="price" ng-model="product.price" placeholder="0.00" step="any" min="0">
-  </div>
-</div>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="description" ng-model="product.description" placeholder="Describe your product....">
+      </div>
+    </div>
 
-<div class="form-group">
-  <div class="col-sm-offset-2 col-sm-10">
-    <input type="text" class="btn btn-primary" value="Save" type="submit">
+    <div class="form-group">
+      <label for="price" class="col-sm-2 control-label">Price</label>
+
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="price" ng-model="product.price" placeholder="0.00" step="any" min="0">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <input type="text" class="btn btn-primary" value="Save" type="submit">
+      </div>
+    </div>
   </div>
 </div>
