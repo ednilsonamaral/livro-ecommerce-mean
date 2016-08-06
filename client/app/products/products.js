@@ -10,19 +10,19 @@ angular.module('meanshopApp')
       })
 
       .state('newProduct', {
-        url: '/product/new',
+        url: '/products/new',
         templateUrl: 'app/products/templates/product-new.html',
         controller: 'ProductNewCtrl'
       })
 
       .state('viewProduct', {
-        url: '/product/:id',
+        url: '/products/:id/view',
         templateUrl: 'app/products/templates/product-view.html',
         controller: 'ProductViewCtrl'
       })
 
       .state('editProduct', {
-        url: '/product/:id/edit',
+        url: '/products/:id/edit',
         templateUrl: 'app/products/templates/product-edit.html',
         controller: 'ProductEditCtrl'
       });
