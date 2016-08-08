@@ -389,3 +389,6 @@ No ecommerce serão utilizadas 4 estratégias:
 
 `Passport.use` define o método de validação da combinação email/senha.  
 `Passport.authenticate` é usado para associar a estratégia de autenticação a uma rota.
+
+
+### Capítulo 7 - Checkout
