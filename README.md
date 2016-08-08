@@ -337,3 +337,55 @@ Quando o app envia uma solicitação POST com uma imagem, é preciso adicionar n
 
 
 ### Capítulo 6 - Autenticação e Autorização
+
+Autenticação é permitir que os usuários loguem nos sistemas, que se autentiquem. Seja por meio de usuário e senha ou através de um perfil de redes sociais.  
+
+Autorização atribui papéis aos usuários, ou seja, o que ele poderá ou não fazer no sistema após estar autenticado.
+
+
+#### Autenticação por sessão
+
+É uma das mais comuns e emprega cookies para gravar um **identificador de sessão** (*session ID*) que é relacionado (na maioria das vezes) ao **identificador do usuário** (*user ID*). E, uma vez que o usuário faz login, o *sesion ID* é repassado a cada solicitação.
+
+
+#### Autenticação por token - JWT (Json Web Token)
+
+Ao invés de cookies, ele emprega tokens web em formato JSON. Esse token é adicionado ao cabeçalho HTTP de todas as solicitações do navegador.
+
+
+#### Autenticação por OAuth
+
+Permite que usuários façam login no sistema com apenas um clique, utilizando as credenciais de redes sociais, como Facebook, Twitter, Google, etc.
+
+
+#### Autenticação com PassportJS
+
+É um módulo instalável via `npm` que pode ser adicionado aos middlewares ExpressJS, empregando sessões para agregar a funcionalidade de login e mais de 300 estratégias de autenticação.
+
+
+##### MemoryStore
+
+Os dados da sessão são gravados na memória do servidor. Isso não é bom e não é recomendado!
+
+
+##### MongoStore
+
+É uma solução melhor. As sessões podem ser escalonadas à media que escalonamos nosso database. Ou seja, salvamos no database.
+
+
+#### Estratégias e rotas de autenticação
+
+No ecommerce serão utilizadas 4 estratégias:
+
+1. Local, com email e senha;  
+2. Facebook;  
+3. Twitter;  
+4. Google.
+
+
+`index.js` > define as rotas  
+`passpor.js` > define as estratégias
+
+
+`Passport.use` define o método de validação da combinação email/senha.  
+`Passport.authenticate` é usado para associar a estratégia de autenticação a uma rota.
