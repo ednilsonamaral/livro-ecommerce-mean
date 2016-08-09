@@ -10,6 +10,8 @@ var path = require('path');
 module.exports = function(app) {
 
   // Insert routes below
+  app.use('/api/braintrees', require('./api/braintree'));
+    app.use('/api/orders', require('./api/order'));
   app.use('/api/products', require('./api/product'));
   app.use('/api/users', require('./api/user'));
 

@@ -29,7 +29,7 @@ angular.module('meanshopApp')
 
       .state('checkout', {
         url: '/checkout',
-        templateUrl: 'app/products/templates/product-checkout.html',
+        templateUrl: 'app/products/templates/products-checkout.html',
         controller: 'ProductCheckoutCtrl'
       });
   });
