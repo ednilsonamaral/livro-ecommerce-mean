@@ -384,7 +384,7 @@ No ecommerce serão utilizadas 4 estratégias:
 
 
 `index.js` > define as rotas  
-`passpor.js` > define as estratégias
+`passport.js` > define as estratégias
 
 
 `Passport.use` define o método de validação da combinação email/senha.  
@@ -392,3 +392,23 @@ No ecommerce serão utilizadas 4 estratégias:
 
 
 ### Capítulo 7 - Checkout
+
+
+#### `ngCart`
+
+Trabalhar com open source possui uma enorme vantagem para desenvolver soluções e, em muitas vezes não é preciso deservolvermos algo do zero. Primeiro verificamos se já existe um módulo que atende o que precisamos.  
+
+E, como é de se esperar no mundo MEAN, temos o módulo **ngCart**, que é um módulo responsável pelo carrinho de compras. Ele oferece algumas diretivas e serviços muito úteis para levantarmos nosso carrinho de compras.
+
+
+#### Braintree
+
+O MEANSHOP vai receber pagamentos via PayPal, cartões de débito/crédito.  
+
+**Braintree não funciona no Brasil, yet!**
+
+
+A diretiva `braintree-dropin` serve para renderizar os formulários default de cartões de débito/crédito e o botão do PayPal. Esse formulário já está preparado para fazer as validações e checagens de segurança.
+
+
+### Capítulo 8 - Busca e navegação
