@@ -403,6 +403,9 @@ E, como é de se esperar no mundo MEAN, temos o módulo **ngCart**, que é um m�
 
 #### Braintree
 
+> Uma maneira simples, robusto para aceitar pagamentos ou permitir a compra de quase qualquer lugar - em seu aplicativo móvel ou online. No topo da amplitude de clientes PayPal e Venmo, nossas integrações fáceis dará acesso a vários métodos de pagamento, preços simples, proteção de alto nível e suporte de classe mundial.
+
+
 O MEANSHOP vai receber pagamentos via PayPal, cartões de débito/crédito.  
 
 **Braintree não funciona no Brasil, yet!**
@@ -416,3 +419,54 @@ A diretiva `braintree-dropin` serve para renderizar os formulários default de c
 `ng-focus` vai redirecionar a pagina assim que o usuario clicar no campo de busca, ele vai pra pagina de produtos.  
 
 **URL slugs** são URLs legíveis por humanos e por mecanismos de busca. Ao invés de ter uma URL como `/categories/8877aa6asds55` é melhor oferecer uma URL amigável, como `/categories/books`.
+
+
+### Capítulo 9 - Colocando em produção
+
+Independente do tipo de aplicação, a fase de *deployment* é decisiva para o seu sucesso. Aqui determinamos o número de usuários simultâneos, o tempo de carga da aplicação e muitos outros detalhes. E **esses números não devem ser negligenciados!**
+
+
+#### Ambientes de aplicação
+
+Normalmente uma aplicação passa seu ciclo de vida por 4 ambientes distintos:
+
+
+1. Desenvolvimento;  
+2. Testes;  
+3. Produção: onde o código é considerado estável e pronto para usuários finais;  
+4. Aceitação (triagem): idêntico ao de produção, mas onde os devs interagem com novos recuros. O database é um snapshot (cópia) do database real em produção.
+
+
+Cada embiente de aplicação possui um database próprio e independente.
+
+
+#### Otimizações para ambientes de produção
+
+* Minificação;  
+* Concatenação;  
+* Uso de CDNs.
+
+
+#### Escalonamento de aplicações web
+
+##### Vertical  
+
+O mais simples de todos. Requer a atualização de hardware, pois conta com apenas 1 servidor. É a maneira mais fácil de fazer *deploy* de uma aplicação, colocando tudo em apenas um servidor.
+
+
+##### Horizontal  
+
+O mais complicado, porém, o melhor a longo prazo. Pois ele envolve distribuir a carga por vários servidores. Dividir tarefas entre vários servidores provou ser a maneira mais econômica de escalonar aplicações.  
+
+Empresas como Google, Facebook, Amazon usam inúmeros *clusters* de máquinas para servir milhões de usuários simultâneos.
+
+
+### Ambiente de computação na nuvem
+
+* Heroku e Openshift: abstraem toda a complexidade de configurar os servidores e permitem que eles possam ser escalonados. Cabendo a nós nos precoupar apenas com a aplicação.  
+* VPS - Virtual Private Servers: permite a configuração manual do servidor.
+
+
+#### Platform as a Service (PaaS)
+
+É um tipo de computação na nuvem muito conveniente. Pois nos permite implantar rapidamente uma aplicação, sem perder tempo configurando o servidor.
