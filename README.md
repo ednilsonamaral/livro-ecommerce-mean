@@ -412,3 +412,7 @@ A diretiva `braintree-dropin` serve para renderizar os formulários default de c
 
 
 ### Capítulo 8 - Busca e navegação
+
+`ng-focus` vai redirecionar a pagina assim que o usuario clicar no campo de busca, ele vai pra pagina de produtos.  
+
+**URL slugs** são URLs legíveis por humanos e por mecanismos de busca. Ao invés de ter uma URL como `/categories/8877aa6asds55` é melhor oferecer uma URL amigável, como `/categories/books`.
