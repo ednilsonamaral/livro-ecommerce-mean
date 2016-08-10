@@ -461,7 +461,7 @@ O mais complicado, porém, o melhor a longo prazo. Pois ele envolve distribuir a
 Empresas como Google, Facebook, Amazon usam inúmeros *clusters* de máquinas para servir milhões de usuários simultâneos.
 
 
-### Ambiente de computação na nuvem
+#### Ambiente de computação na nuvem
 
 * Heroku e Openshift: abstraem toda a complexidade de configurar os servidores e permitem que eles possam ser escalonados. Cabendo a nós nos precoupar apenas com a aplicação.  
 * VPS - Virtual Private Servers: permite a configuração manual do servidor.
@@ -470,3 +470,6 @@ Empresas como Google, Facebook, Amazon usam inúmeros *clusters* de máquinas pa
 #### Platform as a Service (PaaS)
 
 É um tipo de computação na nuvem muito conveniente. Pois nos permite implantar rapidamente uma aplicação, sem perder tempo configurando o servidor.
+
+
+### Capítulo 10 - Adicionando recursos personalizados com alta qualidade
