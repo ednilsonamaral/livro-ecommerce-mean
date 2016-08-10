@@ -31,5 +31,11 @@ angular.module('meanshopApp')
         url: '/checkout',
         templateUrl: 'app/products/templates/products-checkout.html',
         controller: 'ProductCheckoutCtrl'
+      })
+
+      .state('productCatalog', {
+        url: '/products/:slug',
+        templateUrl: 'app/products/templates/products-list.html',
+        controller: 'ProductCatalogCtrl'
       });
   });

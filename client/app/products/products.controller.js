@@ -6,6 +6,21 @@ angular.module('meanshopApp')
 
   .controller('ProductsCtrl', function ($scope, Product) {
     $scope.products = Product.query();
+
+    $scope.$on('search:term', function (event, data) {
+      if( data.length ){
+        $scope.product = Product.search({ id: data} );
+        $scope.query = data;
+      } else {
+        $scope.product = Product.query();
+        $scope.query = '';
+      }
+    });
+  })
+
+  .controller('ProductCatalogCtrl', function ($scope, $stateParams, Product) {
+    $scope.product = Product.catalog({ id: $stateParams.slug });
+    $scope.query = $stateParams.slug;
   })
 
   .controller('ProductViewCtrl', function ($scope, $state, $stateParams, Product) {
