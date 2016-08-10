@@ -1,9 +1,9 @@
 'use strict';
 
-var express = require('express'),
-    controller = require('./product.controller'),
-    multiparty = require('connect-multiparty'),
-    uploadOptions = { autoFile: true, uploadDir: 'client/assets/uploads/'};
+var express = require('express');
+var controller = require('./product.controller');
+var multiparty = require('connect-multiparty');
+var uploadOptions = { autoFile: true, uploadDir: 'client/assets/uploads/' };
 
 var router = express.Router();
 

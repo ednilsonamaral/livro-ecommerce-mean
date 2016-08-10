@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="/" class="navbar-brand">meanshop</a>
+      <a href="/" class="navbar-brand">Meanshop</a>
     </div>
     <div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-main">
       <ul class="nav navbar-nav">
@@ -21,14 +21,12 @@
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
           <div class="input-group">
-            <span class="input-group-addon">
-              <span class="fa fa-search"></span>
-            </span>
-
-            <input type="text" id="searchBox" class="form-control input-large" placeholder="Search" ng-model="searchTerm" ng-change="search()" ng-focus="redirect()">
+            <span class="input-group-addon"><span class="fa fa-search"></span></span>
+            <input id="searchBox" type="text" class="form-control input-large" placeholder="Search" ng-model="searchTerm" ng-change="search()" ng-focus="redirect()">
           </div>
         </div>
       </form>
+
 
       <ul class="nav navbar-nav navbar-right">
         <li ng-hide="isLoggedIn()" ui-sref-active="active"><a ui-sref="signup">Sign up</a></li>
@@ -42,6 +40,8 @@
           </a>
         </li>
       </ul>
+
+
     </div>
   </div>
 </div>

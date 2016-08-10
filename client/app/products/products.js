@@ -34,7 +34,7 @@ angular.module('meanshopApp')
       })
 
       .state('productCatalog', {
-        url: '/products/:slug',
+        url: '/products/:slug/catalog',
         templateUrl: 'app/products/templates/products-list.html',
         controller: 'ProductCatalogCtrl'
       });

@@ -31,15 +31,15 @@ var catalogIndex = proxyquire('./index.js', {
 describe('Catalog API Router:', function() {
 
   it('should return an express router instance', function() {
-    catalogIndex.should.equal(routerStub);
+    expect(catalogIndex).to.equal(routerStub);
   });
 
   describe('GET /api/catalogs', function() {
 
     it('should route to catalog.controller.index', function() {
-      routerStub.get
-                .withArgs('/', 'catalogCtrl.index')
-                .should.have.been.calledOnce;
+      expect(routerStub.get
+        .withArgs('/', 'catalogCtrl.index')
+        ).to.have.been.calledOnce;
     });
 
   });
@@ -47,9 +47,9 @@ describe('Catalog API Router:', function() {
   describe('GET /api/catalogs/:id', function() {
 
     it('should route to catalog.controller.show', function() {
-      routerStub.get
-                .withArgs('/:id', 'catalogCtrl.show')
-                .should.have.been.calledOnce;
+      expect(routerStub.get
+        .withArgs('/:id', 'catalogCtrl.show')
+        ).to.have.been.calledOnce;
     });
 
   });
@@ -57,9 +57,9 @@ describe('Catalog API Router:', function() {
   describe('POST /api/catalogs', function() {
 
     it('should route to catalog.controller.create', function() {
-      routerStub.post
-                .withArgs('/', 'catalogCtrl.create')
-                .should.have.been.calledOnce;
+      expect(routerStub.post
+        .withArgs('/', 'catalogCtrl.create')
+        ).to.have.been.calledOnce;
     });
 
   });
@@ -67,9 +67,9 @@ describe('Catalog API Router:', function() {
   describe('PUT /api/catalogs/:id', function() {
 
     it('should route to catalog.controller.update', function() {
-      routerStub.put
-                .withArgs('/:id', 'catalogCtrl.update')
-                .should.have.been.calledOnce;
+      expect(routerStub.put
+        .withArgs('/:id', 'catalogCtrl.update')
+        ).to.have.been.calledOnce;
     });
 
   });
@@ -77,9 +77,9 @@ describe('Catalog API Router:', function() {
   describe('PATCH /api/catalogs/:id', function() {
 
     it('should route to catalog.controller.update', function() {
-      routerStub.patch
-                .withArgs('/:id', 'catalogCtrl.update')
-                .should.have.been.calledOnce;
+      expect(routerStub.patch
+        .withArgs('/:id', 'catalogCtrl.update')
+        ).to.have.been.calledOnce;
     });
 
   });
@@ -87,9 +87,9 @@ describe('Catalog API Router:', function() {
   describe('DELETE /api/catalogs/:id', function() {
 
     it('should route to catalog.controller.destroy', function() {
-      routerStub.delete
-                .withArgs('/:id', 'catalogCtrl.destroy')
-                .should.have.been.calledOnce;
+      expect(routerStub.delete
+        .withArgs('/:id', 'catalogCtrl.destroy')
+        ).to.have.been.calledOnce;
     });
 
   });

@@ -8,18 +8,18 @@ angular.module('meanshopApp')
     $scope.products = Product.query();
 
     $scope.$on('search:term', function (event, data) {
-      if( data.length ){
-        $scope.product = Product.search({ id: data} );
+      if(data.length) {
+        $scope.products = Product.search({id: data});
         $scope.query = data;
       } else {
-        $scope.product = Product.query();
+        $scope.products = Product.query();
         $scope.query = '';
       }
     });
   })
 
   .controller('ProductCatalogCtrl', function ($scope, $stateParams, Product) {
-    $scope.product = Product.catalog({ id: $stateParams.slug });
+    $scope.products = Product.catalog({id: $stateParams.slug});
     $scope.query = $stateParams.slug;
   })
 
@@ -54,22 +54,21 @@ angular.module('meanshopApp')
 
   .constant('clientTokenPath', '/api/braintree/client_token')
 
-  .controller('ProductCheckoutCtrl', function ($scope, $state, $http, ngCart) {
+  .controller('ProductCheckoutCtrl',
+    function($scope, $http, $state, ngCart){
     $scope.errors = '';
 
     $scope.paymentOptions = {
       onPaymentMethodReceived: function(payload) {
         angular.merge(payload, ngCart.toObject());
         payload.total = payload.totalCost;
-        console.error(payload);
-
         $http.post('/api/orders', payload)
-          .then(function success() {
-            ngCart.empty(true);
-            $state.go('products');
-          }, function error(res) {
-            $scope.errors = res;
-          });
+        .then(function success () {
+          ngCart.empty(true);
+          $state.go('products');
+        }, function error (res) {
+          $scope.errors = res;
+        });
       }
     };
   });
