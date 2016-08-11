@@ -473,3 +473,5 @@ Empresas como Google, Facebook, Amazon usam inúmeros *clusters* de máquinas pa
 
 
 ### Capítulo 10 - Adicionando recursos personalizados com alta qualidade
+
+Aqui será implementado as ações do administrador.
