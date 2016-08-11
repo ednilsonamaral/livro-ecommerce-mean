@@ -504,3 +504,21 @@ Assim, sempre teremos pelo menos uma instância atendendo as solicitações dos 
 
 * Instalação (requer Ruby): `gem install capistrano -v 3.4.0`  
 * Gerar arquivos iniciais: `cap install`
+
+
+Ele trabalha com tarefas (*rake tasks*). Onde incluem operações em servidores, instalar programas, baixar código de um repositório, reiniciar um serviço e muitas outras coisas. Além de podermos automatizar qualquer ação que poderíamos fazer manualmente via shell remoto (acesso SSH).
+
+
+###### Estrutura de arquivos e pastas gerados com `cap install`
+
+* `Capfile`: carrega as tarefas do Capistrano;  
+* `config/deploy.rb`: define as variáveis que serão usadas nas tarefas, como nome do repositório, nome da aplicação, etc; define as variáveis comuns a todos os ambientes;  
+* `config/deploy/`: define as variáveis usadas especificamente durante o estágio de deploy, como `NODE_ENV`, IP dos servidores, etc;  
+* `lib/capistrano/tasks/*.rake`: contém todas as tarefas adicionais e pode ser chamado a partir do `config/deploy.rb`.
+
+
+
+
+
+
+## FIM!
