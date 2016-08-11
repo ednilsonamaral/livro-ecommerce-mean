@@ -474,4 +474,33 @@ Empresas como Google, Facebook, Amazon usam inúmeros *clusters* de máquinas pa
 
 ### Capítulo 10 - Adicionando recursos personalizados com alta qualidade
 
-Aqui será implementado as ações do administrador.
+Aqui será implementado as ações do administrador. O livro não mostrou mais implementações de recursos, porém deixou sugestões:
+
+* Wishlist.  
+* Notificações: via email, baseado no interesse do usuário ou admin que tiver feito login no site. Tipo email de promoções.  
+* Estatísticas: gráficos e tabelas com itens mais vendidos ou procurados.  
+* Relatórios: gerar relatório de vendas, itens vendidos e outras informações.  
+* Monitoramento: serviço que verifica o uso de recursos no servidor e notifica os responsáveis pela infra.  
+* Autorização.
+
+
+#### Deploy de novas versões
+
+Para não ser repetitivo e induzir erros, a automação de deploy fica mais eficiente. Aqui será usado o Capistrano como ferramenta de deploy. E outro fator importante é conduzir os upgrades sem ter que tirarmos a aplicação do ar.
+
+
+##### Zero-downtime
+
+Não é nada bom mostrar ao usuário mensagens como **"Em manutenção, volte mais tarde"**, isso deve ser evitado a todo tempo. Além disso, devemos atualizar nossa aplicação sempre que necessário sem o usuário perceber.  
+
+Para isso, usaremos uma arquitetura de funcionamento contínuo, em outras palavras, zero-downtime. Onde usamos duas aplicações NodeJS, enquanto atualizamos uma delas a outra continua atendendo ao cliente. Depois, atualizamos a segunda, enquanto a primeira já está atualizada.  
+
+Assim, sempre teremos pelo menos uma instância atendendo as solicitações dos usuários.
+
+
+##### Capistrano
+
+É uma ferramenta remota de automação multiservidor que nos permite o deploy de nossa aplicação em diferentes ambientes, como o de desenvolvimento e produção.
+
+* Instalação (requer Ruby): `gem install capistrano -v 3.4.0`  
+* Gerar arquivos iniciais: `cap install`
