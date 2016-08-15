@@ -1,4 +1,11 @@
+
 # Construindo uma Aplicação E-commerce com MEAN (livro)
+
+## Observações
+
+1. Não foi possível realizar o deploy dessa aplicação pois a versão do `generator-angular-fullstack` é um pouco antiga. Devido a isso não foi possível realizar o deploy em ferramentas como Heroku e/ou Openshift.  
+2. As versões dos pacotes utilizados aqui são as mesmas do livro (Yeoman, grunt, generator-angular-fullstack, etc).
+
 
 ## Resumo dos Capítulos e Anotações Relevantes
 
