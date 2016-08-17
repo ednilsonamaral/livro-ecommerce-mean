@@ -1,4 +1,3 @@
-
 # Construindo uma Aplicação E-commerce com MEAN (livro)
 
 ## Observações
